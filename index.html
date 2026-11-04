@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Casa Nova - Plataforma de Mudanças</title>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --secondary-color: #1a1a2e;
+            --accent-color: #f7f9fc;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 span {
+            color: var(--primary-color);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background-color: #ffffff;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .section-content {
+            display: none;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--accent-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .section-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Malta <span>Casa Nova</span></h1>
+        <p>A sua plataforma de confiança para mudanças rápidas, seguras e transparentes.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Navegação por Abas -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('prestadores')">Para Prestadores</button>
+            <button class="tab-btn" onclick="switchTab('clientes')">Para Clientes</button>
+            <button class="tab-btn" onclick="switchTab('geral')">Termos Gerais & Privacidade</button>
+        </div>
+
+        <!-- CONTEÚDO: PRESTADORES -->
+        <section id="prestadores" class="section-content active">
+            <h2>Termos e Condições para Prestadores de Serviços</h2>
+            
+            <h3>1. Requisitos de Admissão</h3>
+            <ul>
+                <li>Ser maior de idade (idade igual ou superior a 18 anos).</li>
+                <li>Apresentação de documento de identificação válido.</li>
+                <li>Carta de condução válida e adequada à viatura utilizada.</li>
+                <li>Documentos e seguro da viatura atualizados.</li>
+            </ul>
+
+            <h3>2. Dados Verdadeiros e Conta Pessoal</h3>
+            <ul>
+                <li>O utilizador garante que toda a informação prestada é verdadeira, exata e atualizada.</li>
+                <li>A conta criada é estritamente pessoal e intransmissível.</li>
+            </ul>
+
+            <h3>3. Verificação e Moderação</h3>
+            <ul>
+                <li>A plataforma reserva-se o direito de solicitar documentos adicionais a qualquer momento.</li>
+                <li>Contas associadas a dados falsos serão imediatamente suspensas ou encerradas de forma permanente.</li>
+            </ul>
+
+            <h3>4. Comissão e Pagamentos</h3>
+            <ul>
+                <li><strong>Percentagem retida:</strong> A app retém uma comissão acordada sobre o valor de cada serviço concluído.</li>
+                <li><strong>Prazos de pagamento:</strong> Os repasses dos valores devidos ao prestador são efetuados nos prazos estipulados na aplicação.</li>
+            </ul>
+
+            <h3>5. Qualidade do Serviço</h3>
+            <ul>
+                <li><strong>Pontualidade:</strong> O cumprimento rigoroso dos horários agendados é obrigatório.</li>
+                <li><strong>Cuidado com os bens:</strong> O prestador deve manusear os pertences do cliente com o máximo cuidado e profissionalismo.</li>
+                <li><strong>Avaliações e Cancelamentos:</strong> Manutenção de classificações médias mínimas exigidas e restrição de cancelamentos injustificados.</li>
+            </ul>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Responsabilidade e Danos</h4>
+                    <p>Eventuais danos aos bens transportados são avaliados para apurar responsabilidades entre o prestador, o seguro do prestador ou apólices complementares.</p>
+                </div>
+                <div class="card">
+                    <h4>Independência</h4>
+                    <p>O prestador atua de forma autónoma e independente, não existindo qualquer vínculo laboral ou de subordinação com a aplicação.</p>
+                </div>
+                <div class="card">
+                    <h4>Suspensão e Encerramento</h4>
+                    <p>Contas podem ser encerradas por motivos de fraude, reclamações graves de clientes ou incumprimento reiterado das regras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO: CLIENTES -->
+        <section id="clientes" class="section-content">
+            <h2>Termos e Condições para Clientes (Quem Contrata)</h2>
+
+            <h3>1. Registo na Plataforma</h3>
+            <ul>
+                <li>O cliente deve fornecer dados verdadeiros, ser maior de idade e possuir apenas uma conta ativa por pessoa.</li>
+            </ul>
+
+            <h3>2. Descrição Rigorosa da Mudança</h3>
+            <ul>
+                <li>O cliente compromete-se a indicar com exatidão o volume dos bens, as condições de acesso (número de andares, existência ou funcionamento de elevador) e a sinalizar objetos frágeis ou de elevado valor.</li>
+            </ul>
+
+            <h3>3. Preço e Pagamento</h3>
+            <ul>
+                <li><strong>Preço estimado vs. final:</strong> O valor inicial é uma estimativa baseada nos dados fornecidos, podendo sofrer alterações caso as condições reais diferissem.</li>
+                <li><strong>Taxas extra:</strong> Aplicáveis em situações de tempo de espera excessivo, transporte por escadas sem elevador ou distâncias não contempladas inicialmente.</li>
+                <li><strong>Formas de pagamento:</strong> Disponibilizadas de forma segura através da app.</li>
+            </ul>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Cancelamento e Reagendamento</h4>
+                    <p>Existe um prazo gratuito para cancelamento sem custos. Após esse período, aplicar-se-ão taxas de penalização de acordo com a antecedência do aviso.</p>
+                </div>
+                <div class="card">
+                    <h4>Objetos Proibidos</h4>
+                    <p>É estritamente proibido o transporte de materiais perigosos, ilegais, inflamáveis, explosivos ou substâncias ilícitas.</p>
+                </div>
+                <div class="card">
+                    <h4>Danos e Reclamações</h4>
+                    <p>Reclamações por danos devem ser submetidas num prazo limite (ex: 24 a 48 horas após o serviço), acompanhadas obrigatoriamente de prova fotográfica clara.</p>
+                </div>
+            </div>
+
+            <h3>4. Conduta</h3>
+            <ul>
+                <li>Exige-se respeito mútuo e a garantia de um acesso seguro ao local de carga e descarga.</li>
+            </ul>
+        </section>
+
+        <!-- CONTEÚDO: GERAL E PRIVACIDADE -->
+        <section id="geral" class="section-content">
+            <h2>Termos Gerais, Proteção de Dados e Legislação</h2>
+
+            <h3>1. Proteção de Dados (Lei de Proteção de Dados Pessoais - Angola)</h3>
+            <ul>
+                <li><strong>Dados recolhidos:</strong> Identificação pessoal, contactos, dados de localização, documentos de identificação e histórico de transações.</li>
+                <li><strong>Finalidade:</strong> Gestão de perfis, intermediação de serviços de mudança, processamento de pagamentos e segurança da comunidade.</li>
+                <li><strong>Consentimento:</strong> O uso da app pressupõe a aceitação informada do tratamento de dados, em conformidade estrita com a legislação angolana em vigor.</li>
+            </ul>
+
+            <h3>2. Limitação de Responsabilidade da App</h3>
+            <ul>
+                <li>A "Malta Casa Nova" atua estritamente como uma <strong>plataforma intermediária</strong> tecnológica que conecta clientes a prestadores de serviços independentes, não sendo diretamente executora das mudanças.</li>
+            </ul>
+
+            <h3>3. Alterações aos Termos e Foro Competente</h3>
+            <ul>
+                <li>Estes termos podem ser atualizados periodicamente, sendo os utilizadores notificados das alterações relevantes.</li>
+                <li><strong>Lei aplicável e Foro:</strong> Quaisquer litígios emergentes destes termos serão regidos pelas leis da República de Angola e submetidos ao foro da comarca competente em Angola.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Malta Casa Nova. Todos os direitos reservados. Feito com foco na segurança e eficiência em Angola.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Esconde todas as secções
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Remove a classe active de todos os botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostra a secção seleccionada e activa o botão correspondente
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
